@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Div Elements</title>
+    <style>
+        body{
+            background:radial-gradient(grey,black);
+            background-size: cover;
+            background-repeat:none;
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            min-width: 100vw;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        #card{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            width:300px;
+            height: 500px;
+            background: rgba(0, 0, 255, 0.8);
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction: column;
+            padding: 20px;
+            color: white;
+        }
+        h1{
+            z-index: 3;
+        }
+        p{
+            z-index: 2;
+        }
+        h5{
+            z-index: 1;
+        }
+   
+        #card:hover{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            width:300px;
+            height: 500px;
+            background: rgba(0, 0, 255, 0.8);
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction: column;
+            padding: 20px;
+            color: white;
+            transform: perspective(1000px) rotateX(45deg) rotateY(15deg) rotateZ(-20deg) ;
+            transform-style: preserve-3d;
+        }
+        h1:hover{
+            z-index: 3;
+        }
+        p:hover{
+            z-index: 2;
+        }
+        h5:hover{
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <h1>Hover Me!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, eaque, autem sint nemo enim minus debitis temporibus exercitationem consequatur aut ad sapiente. Repudiandae consequuntur vero ea magnam saepe eius perspiciatis nemo, delectus voluptas non, aperiam rerum obcaecati eligendi, vitae optio odio provident sunt quisquam exercitationem assumenda. Officia alias necessitatibus iste nesciunt cum vero suscipit et fuga magnam facilis odio culpa quia reiciendis sint, explicabo voluptatum magni quibusdam ipsum totam voluptatibus aliquid! Ipsa itaque sit facere vel soluta assumenda magni quibusdam facilis, ullam quos, eius, nihil quaerat animi quia sequi enim eligendi quod. Fuga rerum itaque sapiente, aspernatur animi mollitia amet.</p>
+        <h5>Created by Michael Parenti</h5>
+    </div>
+
+    <script>
+        document.getElementById("card").addEventListener('mouseover', () => {
+            document.getElementById("card").style.transform = 'perspective(1000px) rotateX(45deg) rotateY(45deg) rotateZ(-35deg)';
+            document.getElementById("card").style.transformStyle = 'preserve-3d';
+            document.querySelector("h1").style.transformStyle = 'preserve-3d';
+            document.querySelector("p").style.transformStyle = 'preserve-3d';
+            document.querySelector("h5").style.transformStyle = 'preserve-3d';
+            document.querySelector("h1").style.transform = 'perspective(1000px) translateZ(30px)';
+            document.querySelector("h1").style.textShadow = '-10px 10px darkblue';
+            document.querySelector("p").style.transform = 'perspective(1000px) translateZ(28px)';
+            document.querySelector("p").style.textShadow = '-10px 10px darkblue';
+            document.querySelector("h5").style.transform = 'perspective(1000px) translateZ(25px)';
+            document.querySelector("h5").style.textShadow = '-10px 10px darkblue';
+        });
+        document.getElementById("card").addEventListener('mouseout', () => {
+            document.getElementById("card").style.transform = 'none';
+            document.getElementById("card").style.transformStyle = 'preserve-3d';
+            document.querySelector("h1").style.transformStyle = 'preserve-3d';
+            document.querySelector("p").style.transformStyle = 'preserve-3d';
+            document.querySelector("h5").style.transformStyle = 'preserve-3d';
+            document.querySelector("h1").style.transform = 'none';
+            document.querySelector("p").style.transform = 'none';
+            document.querySelector("h5").style.transform = 'none';
+            document.querySelector("h1").style.textShadow = 'none';
+            document.querySelector("p").style.textShadow = 'none';
+            document.querySelector("h5").style.textShadow = 'none';
+        });
+    </script>
+</body>
+</html>
